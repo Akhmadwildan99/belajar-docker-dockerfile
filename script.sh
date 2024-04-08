@@ -19,3 +19,19 @@ docker container create --name command akhmadwildan/command
 docker container start command
 
 docker container logs command
+
+
+# LABEL Instruction
+docker build -t akhmadwildan/label label
+
+docker image inspect akhmadwildan/label
+
+# ADD Instruction
+docker build -t akhmadwildan/add add
+
+
+docker container create --name add akhmadwildan/add
+
+docker container start add
+
+docker container logs add
