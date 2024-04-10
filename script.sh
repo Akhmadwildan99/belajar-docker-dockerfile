@@ -65,3 +65,47 @@ docker container start expose
 docker container ls
 
 docker container logs expose
+
+# ENV Instruction
+docker build -t akhmadwildan/env env
+
+docker image inspect akhmadwildan/env
+
+docker container create --name env --env APP_PORT=9090 -p 9090:9090 akhmadwildan/env
+
+docker container start env
+
+docker container ls
+
+docker container logs env
+
+
+# VOLUME Instruction
+docker build -t akhmadwildan/volume volume
+
+docker image inspect akhmadwildan/volume
+
+docker container create --name volume  -p 8080:8080 akhmadwildan/volume
+
+docker container start volume
+
+docker container ls
+
+docker container logs volume
+
+# 9c4f0b2cfd74142bc780e1a9a7f1a22aaef160b74131b77d104f482290248ea7
+
+# WORKDIR Instruction
+docker build -t akhmadwildan/workdir workdir
+
+docker image inspect akhmadwildan/workdir
+
+docker container create --name workdir  -p 8080:8080 akhmadwildan/workdir
+
+docker container start workdir
+
+docker exec -i -t workdir /bin/sh
+
+docker container ls
+
+docker container logs workdir
