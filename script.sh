@@ -109,3 +109,12 @@ docker exec -i -t workdir /bin/sh
 docker container ls
 
 docker container logs workdir
+
+# USER Instruction
+docker build -t akhmadwildan/user user
+
+docker container create --name user  -p 8080:8080 akhmadwildan/user
+
+docker container start user
+
+docker exec -i -t user /bin/sh
