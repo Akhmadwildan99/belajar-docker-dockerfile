@@ -118,3 +118,12 @@ docker container create --name user  -p 8080:8080 akhmadwildan/user
 docker container start user
 
 docker exec -i -t user /bin/sh
+
+# ARG Instruction
+docker build -t akhmadwildan/arg arg --build-arg app=wildan
+
+docker container create --name arg  -p 8080:8080 akhmadwildan/arg
+
+docker container start arg
+
+docker exec -i -t arg /bin/sh
