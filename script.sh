@@ -127,3 +127,42 @@ docker container create --name arg  -p 8080:8080 akhmadwildan/arg
 docker container start arg
 
 docker exec -i -t arg /bin/sh
+
+# HEALTHCHECK Instruction
+docker build -t akhmadwildan/health health
+
+docker container create --name health  -p 8080:8080 akhmadwildan/health
+
+docker container start health
+
+docker exec -i -t health /bin/sh
+
+docker container inspect health
+
+# ENTRYPOINT Instruction
+docker build -t akhmadwildan/entrypoint entrypoint
+
+docker container create --name entrypoint  -p 8080:8080 akhmadwildan/entrypoint
+
+docker container start entrypoint
+
+docker exec -i -t entrypoint /bin/sh
+
+docker container inspect entrypoint
+
+docker image inspect entrypoint
+
+# MULTI Instruction
+docker build -t akhmadwildan/multi multi
+
+docker image ls
+
+docker container create --name multi  -p 8080:8080 akhmadwildan/multi
+
+docker container start multi
+
+docker exec -i -t multi /bin/sh
+
+docker container inspect multi
+
+docker image inspect multi
